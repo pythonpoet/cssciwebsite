@@ -57,7 +57,7 @@ def index():
     global df, plot_data, gpd_init_lower,gpd_init_upper
     # Initialize an empty list to store file contents
     blog_posts = ""
-        files_directory = "templates/posts"
+    files_directory = "templates/posts"
     # List all files in the directory
     files = os.listdir(files_directory)
 
