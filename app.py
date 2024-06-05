@@ -52,7 +52,6 @@ def handle_db(db_name):
 
 @app.route('/')
 def index():
-    return "hello world"
     global df, plot_data, gpd_init_lower,gpd_init_upper
     # Initialize an empty list to store file contents
     blog_posts = ""
