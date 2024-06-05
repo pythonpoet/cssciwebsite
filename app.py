@@ -13,10 +13,6 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['JSON_AS_ASCII'] = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-df=0
-plot_data =0
-gpd_init_lower =0
-gpd_init_upper =0
 
 def mask_df(df,lowest_gdp, highest_gdp):
     print(lowest_gdp, highest_gdp)
@@ -32,6 +28,7 @@ def init():
     plt = make_table(new_df)
     plot_data = plot_to_png(plt)
     
+
 # Define a function to calculate the most lower and upper values
 def calculate_lower_upper_values(df):
     # Your calculation logic here
@@ -56,10 +53,24 @@ def index():
     # Initialize an empty list to store file contents
     blog_posts = ""
 
+    files_directory = "templates/posts"
+    # List all files in the directory
+    files = os.listdir(files_directory)
 
+         # Iterate through each file
+    for file_name in files:
+        # Construct the full file path
+        file_path = os.path.join(files_directory, file_name)
+
+        # Check if the item in the directory is a file
+        if os.path.isfile(file_path):
+            # Open the file and read its contents as a string
+            with open(file_path, 'r', encoding='utf-8') as file:
+                # Read the contents of the file and append it to the list
+                blog_posts += file.read() + '\n'
                 
-    print("david was here")
-    return render_template('index.html', blog_posts=blog_posts,)#data={"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
+
+    return render_template('index.html', blog_posts=blog_posts,data={"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
 
 # Route to handle processing the values sent from the client
 @app.route('/process_values', methods=['POST'])
@@ -99,6 +110,5 @@ def get_bot_icon():
     return send_file('static/robot.png', mimetype='image/png')
 
 if __name__ == '__main__':
-    print("run programm")
     init()
     app.run(debug=True,port=5144)
