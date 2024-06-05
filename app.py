@@ -32,7 +32,6 @@ def init():
     plt = make_table(new_df)
     plot_data = plot_to_png(plt)
     
-init()
 # Define a function to calculate the most lower and upper values
 def calculate_lower_upper_values(df):
     # Your calculation logic here
