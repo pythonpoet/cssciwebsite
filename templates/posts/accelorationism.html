@@ -1,0 +1,40 @@
+    <div class="post">
+      <h2>Scatter Plot of Broadband vs. Gini-2019</h2>
+      <p>
+
+        Techno-chauvinism is the belief that technology and its potential to improve life is inherently superior to other forms of progress or human endeavor. It is often seen as a way of understanding and shaping the world in a more “rational” and “objective” way. However, techno-chauvinism can also be a source of social inequality, as it can lead to a prioritization of technological progress over other forms of progress.
+        
+        The growth of the tech industry over the last few decades has seen unprecedented levels of wealth and opportunity created for individuals who are able to use and develop technology. This has led to a digital divide, where those who are able to access and use technology have an advantage over those who are not. This can be seen in the lack of access to technology in rural and low-income areas, as well as in the gender and racial disparities in the tech industry.
+        
+        Furthermore, techno-chauvinism can lead to a disregard for the social, cultural, and environmental impacts of technological advancements. This can lead to a lack of consideration for the needs and values of people who are not part of the tech industry, or those who may be negatively impacted by certain technologies. For example, the development of AI and automation has led to a number of job losses, particularly in manufacturing and other low-skilled industries. This has had a disproportionate effect on lower-income and minority populations.
+        
+        Ultimately, techno-chauvinism can lead to an unequal distribution of wealth, power, and opportunity, as well as a lack of consideration for the diverse needs and values of different people. To address these issues, it is important to recognize the potential of technology to create positive change, while also recognizing and addressing the social, cultural, and environmental impacts of technology on different communities.</p>
+        <h1>Scatter Plot of Broadband vs. Gini-2019</h1>
+        <div id="imageContainer"></div>
+        <script>
+            var lowerValueFromFlask = data.lower_value
+            var upperValueFromFlask = data.upper_value
+           
+            // Assuming your base64-encoded image data is stored in jsonData
+            var base64ImageData = data.plot_data;
+            // Create a new image element
+            var img = document.createElement('img');
+            // Set the src attribute with the base64-encoded image data
+            img.src = 'data:image/png;base64,' + base64ImageData;
+            // Set alt text for the image
+            img.alt = 'Scatter Plot';
+            // Append the image element to the image container
+            var imageContainer = document.getElementById('imageContainer');
+            imageContainer.append(img)
+        </script>
+        <div class="ruler-container">
+          <div id="slider" class="ruler"></div>
+          <div id="lowerValue"></div>
+          <div id="upperValue"></div>
+        </div>
+        <form id="rangeForm">
+          <button type="button" onclick="sendValues()">Send Values</button>
+        </form>
+
+        <p class="date">Published on April 14, 2024</p>
+    </div>

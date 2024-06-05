@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 21cm; /* A4 width */
+  min-height: 29.7cm; /* Minimum A4 height */
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Set container position to relative */
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author-info {
+  display: flex;
+  align-items: center;
+}
+.author-icon img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%; /* Make the icon round */
+  margin-right: 10px;
+  transition: transform 0.3s ease; /* Smooth transition */
+  overflow: hidden; 
+  transform-origin: top left;
+}
+
+.author-icon img:hover {
+  transform: scale(5); /* Enlarge the image on hover */
+}
+
+.contact-info p {
+  margin: 0;
+}
+.blog-posts {
+  margin-top: 20px; /* Adjust margin to create space below the header */
+}
+.post {
+  margin-bottom: 40px;
+}
+.post h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.post p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.post .date {
+  font-size: 12px;
+  color: #666;
+}
+.post img {
+  max-width: 100%; /* Ensure images do not exceed the width of their container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+.ruler-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.ruler {
+  height: 20px;
+}
+.noUi-handle {
+  height: 20px;
+  width: 20px;
+}
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  width: 60px; /* Adjust size of circular window */
+  height: 60px; /* Adjust size of circular window */
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-icon img {
+  width: 40px; /* Adjust size of chat icon */
+  height: 40px; /* Adjust size of chat icon */
+}
+
+/* Style for chat window */
+.chat-window {
+  display: none;
+  position: fixed;
+  bottom: 80px; /* Adjust this value to your preference */
+  right: 40px; /* Adjust this value to your preference */
+  width: 300px; /* Adjust this value to your preference */
+  height: 400px; /* Adjust this value to your preference */
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  z-index: 1000;
+}
+/* Style for chat log */
+.chat-log {
+  overflow-y: auto;
+  height: 80%;
+}
+
+/* Style for message containers */
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+/* Style for bot icon */
+.chat-bot-icon {
+  margin-right: 10px;
+}
+
+/* Style for user messages */
+.user-message {
+  background-color: #f1f0f0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Style for bot messages */
+.chat-message {
+  background-color: #3f8fff;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Style for the input field and send button */
+.chat-input {
+  display: flex;
+  align-items: center;
+}
+
+#message-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#send-button {
+  padding: 8px 16px;
+  margin-left: 8px;
+  background-color: #3f8fff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Ensure bot icon image is circular */
+.chat-bot-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
