@@ -75,7 +75,7 @@ def index():
 
                 
     print("david was here")
-    return render_template('index.html', blog_posts=blog_posts,data={})#"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
+    return render_template('index.html', blog_posts=blog_posts,data={"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
 
 # Route to handle processing the values sent from the client
 @app.route('/process_values', methods=['POST'])
