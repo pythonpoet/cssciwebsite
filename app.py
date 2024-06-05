@@ -57,11 +57,25 @@ def index():
     global df, plot_data, gpd_init_lower,gpd_init_upper
     # Initialize an empty list to store file contents
     blog_posts = ""
+        files_directory = "templates/posts"
+    # List all files in the directory
+    files = os.listdir(files_directory)
 
+         # Iterate through each file
+    for file_name in files:
+        # Construct the full file path
+        file_path = os.path.join(files_directory, file_name)
+
+        # Check if the item in the directory is a file
+        if os.path.isfile(file_path):
+            # Open the file and read its contents as a string
+            with open(file_path, 'r', encoding='utf-8') as file:
+                # Read the contents of the file and append it to the list
+                blog_posts += file.read() + '\n'
 
                 
     print("david was here")
-    return render_template('index.html',)# blog_posts=blog_posts,)#data={"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
+    return render_template('index.html', blog_posts=blog_posts,data={})#"plot_data":plot_data,"lower_value":gpd_init_lower,"upper_value":gpd_init_upper})
 
 # Route to handle processing the values sent from the client
 @app.route('/process_values', methods=['POST'])
